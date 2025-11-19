@@ -61,6 +61,10 @@ mouse_cursor/tooltip_position_offset=Vector2(19, 29)
 window/size/mode.editor=0
 window/size/mode.web=0
 
+[dotnet]
+
+project/assembly_name="Threadbare"
+
 [editor]
 
 movie_writer/movie_file="user://recording.ogv"
