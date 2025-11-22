@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://btito2y1tf22u"
-path="res://.godot/imported/ojukwu3.png-b3ddc3ac4503c06cb583852fae04a97c.ctex"
+path="res://.godot/imported/ojukwu3.png-981005cb3c04f78ac3e986b9a46e565f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ojukwu3.png"
-dest_files=["res://.godot/imported/ojukwu3.png-b3ddc3ac4503c06cb583852fae04a97c.ctex"]
+source_file="res://assets/lumisi_files/ojukwu3.png"
+dest_files=["res://.godot/imported/ojukwu3.png-981005cb3c04f78ac3e986b9a46e565f.ctex"]
 
 [params]
 

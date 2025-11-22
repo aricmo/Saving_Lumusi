@@ -11,6 +11,6 @@ This year, however, the people of Ekonu are thrown into chaos when their light s
 It is discovered after some consultation with the gods that the light had been stolen by Ojukwu, the lord of darkness.
 The gods chose Achieng for this quest. A young girl who was usually uninterested in the tribe’s doings.  
 She is granted the blessing of Roha, the spirit guide. She must go to Ojukwu’s castle and retrieve the stolen Orb to save Lumusi. 
-do animation_player.play(&"walk_off")
+do animation_player.play(&"walk_out")
 Hesitant, and wondering why this mission came to her, she packs her bag and begins her quest.
 => END
