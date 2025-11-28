@@ -662,7 +662,7 @@ texture_region_size = Vector2i(32, 32)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pyg04"]
 texture = ExtResource("17_3v3t1")
-texture_region_size = Vector2i(64, 64)
+texture_region_size = Vector2i(64, 112)
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e02hk"]
