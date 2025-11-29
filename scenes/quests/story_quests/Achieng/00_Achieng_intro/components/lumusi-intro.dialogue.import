@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://da0q5yj2tmcvg"
+path="res://.godot/imported/lumusi-intro.dialogue-60de9f97e746e6ca7dd45a82ee1425cb.tres"
+
+[deps]
+
+source_file="res://scenes/quests/story_quests/Achieng/00_Achieng_intro/components/lumusi-intro.dialogue"
+dest_files=["res://.godot/imported/lumusi-intro.dialogue-60de9f97e746e6ca7dd45a82ee1425cb.tres"]
+
+[params]
+
+defaults=true

@@ -2,7 +2,7 @@ extends Cinematic
 
 
 ## Dialogue for cinematic scene.
-@export var lumusi_dialogue: DialogueResource = preload("res://lumusi-intro.dialogue")
+@export var lumusi_dialogue: DialogueResource = preload("res://scenes/quests/story_quests/Achieng/00_Achieng_intro/components/lumusi-intro.dialogue")
 
 ## Optional animation player, to be used from [member dialogue] (if needed).
 @export var animation_player2: AnimationPlayer
