@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://d3k8n660wgutf"]
+[gd_scene load_steps=17 format=4 uid="uid://d3k8n660wgutf"]
 
 [ext_resource type="TileSet" uid="uid://yducoif83sia" path="res://tiles/foam.tres" id="1_o6887"]
 [ext_resource type="TileSet" uid="uid://bcx22clccr7qe" path="res://scenes/quests/story_quests/shjourney/2_shjourney_intro/tilesetIntro02.tres" id="2_wi2pq"]
@@ -6,6 +6,7 @@
 [ext_resource type="TileSet" uid="uid://dfp36ffpanjq2" path="res://tiles/elevation.tres" id="4_88flt"]
 [ext_resource type="SpriteFrames" uid="uid://d0ci8wkfqhcai" path="res://scenes/quests/story_quests/el_juguete_perdido/player_components/apolo_components/apolo_player.tres" id="5_6e0ng"]
 [ext_resource type="PackedScene" uid="uid://7873qa54birk" path="res://scenes/game_elements/props/tree/tree.tscn" id="6_0o8ml"]
+[ext_resource type="PackedScene" uid="uid://xf8f0824nmp5" path="res://scenes/quests/story_quests/shjourney/4_Laberinto/personajes/mapa3/espiritu.tscn" id="6_wi2pq"]
 [ext_resource type="PackedScene" uid="uid://bp20cjimwi8l0" path="res://scenes/game_elements/props/buildings/house/house_2.tscn" id="7_8068p"]
 [ext_resource type="Texture2D" uid="uid://cf4s3v7exsuol" path="res://assets/lumisi_files/crescent-sun.png" id="8_52fcm"]
 [ext_resource type="Script" uid="uid://dx2346h8kwlem" path="res://scenes/quests/story_quests/Achieng/00_Achieng_intro/components/lumusi_cinematic.gd" id="9_svwg0"]
@@ -37,6 +38,18 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(-49, 610)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TileMapLayers/Ontheground/Espiritu2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(626, 484.98102)]
+}
 
 [sub_resource type="Animation" id="Animation_ig1r2"]
 length = 3.0
@@ -63,6 +76,30 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(-49, 610), Vector2(663, 610)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TileMapLayers/Ontheground/Espiritu2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(626, 584.66095)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TileMapLayers/Ontheground/Espiritu2:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_ged53"]
@@ -91,16 +128,59 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(663, 610), Vector2(672, 482.0001), Vector2(1304, 482.0001)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TileMapLayers/Ontheground/Espiritu2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.02, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(626, 584.66095), Vector2(626, 484.98102), Vector2(1266, 484.981)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TileMapLayers/Ontheground/Espiritu2:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_fxuhx"]
+resource_name = "visibility"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TileMapLayers/Ontheground/Espiritu2:visibility_layer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_trfvo"]
 _data = {
 &"RESET": SubResource("Animation_tlq5v"),
+&"visibility": SubResource("Animation_fxuhx"),
 &"walk_on": SubResource("Animation_ig1r2"),
 &"walk_out": SubResource("Animation_ged53")
 }
 
 [node name="Lumusiintro2" type="Node2D"]
 scale = Vector2(1, 1.0433397)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.45452422, 0.45452428, 0.45452416, 1)
 
 [node name="TileMapLayers" type="Node2D" parent="."]
 
@@ -136,6 +216,9 @@ scale = Vector2(0.97395825, 0.8984374)
 sprite_frames = ExtResource("5_6e0ng")
 animation = &"walk"
 autoplay = "idle"
+
+[node name="Espiritu2" parent="TileMapLayers/Ontheground" instance=ExtResource("6_wi2pq")]
+position = Vector2(626, 484.98102)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="TileMapLayers/Ontheground"]
 root_node = NodePath("../../..")
@@ -187,9 +270,12 @@ limit_top = 11
 limit_right = 1270
 limit_bottom = 700
 
+[node name="Screen Overlay" type="CanvasLayer" parent="."]
+
 [node name="Cinematic" type="Node2D" parent="." node_paths=PackedStringArray("animation_player")]
 position = Vector2(9, 19)
 script = ExtResource("9_svwg0")
 dialogue = ExtResource("10_qcj8q")
 animation_player = NodePath("../TileMapLayers/Ontheground/AnimationPlayer")
+next_scene = "uid://ba45vqr7g4hy4"
 metadata/_custom_type_script = "uid://x1mxt6bmei2o"

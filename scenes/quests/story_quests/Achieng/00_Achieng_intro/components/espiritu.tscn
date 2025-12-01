@@ -1,0 +1,57 @@
+[gd_scene load_steps=9 format=3 uid="uid://0rmi4eirr4ex"]
+
+[ext_resource type="Script" uid="uid://dv11604x2etuq" path="res://scenes/game_elements/characters/npcs/components/npc.gd" id="1_i3w3f"]
+[ext_resource type="SpriteFrames" uid="uid://c63hg7u58lfak" path="res://scenes/quests/story_quests/shjourney/Otros_componentes/angel_sprite_frames.tres" id="2_0a2bw"]
+[ext_resource type="Script" uid="uid://du8wfijr35r35" path="res://scenes/game_elements/props/interact_area/components/interact_area.gd" id="3_ahsi1"]
+[ext_resource type="Script" uid="uid://edcifob4jc4s" path="res://scenes/game_logic/talk_behavior.gd" id="4_0a2bw"]
+[ext_resource type="Resource" uid="uid://b85owysws4cl6" path="res://scenes/quests/story_quests/Achieng/02_Achieng_stealth/components/roha.dialogue" id="5_ahsi1"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s437r"]
+radius = 3.0
+height = 16.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3nstv"]
+size = Vector2(20, 17.773207)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1p8x1"]
+
+[node name="Roha" type="CharacterBody2D"]
+scale = Vector2(1.2852403, 1.0302761)
+script = ExtResource("1_i3w3f")
+npc_name = "Roha"
+look_at_side = 0
+sprite_frames = ExtResource("2_0a2bw")
+metadata/_custom_type_script = "uid://dv11604x2etuq"
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -35)
+sprite_frames = ExtResource("2_0a2bw")
+animation = &"appear"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(6.44, 1.3199999)
+shape = SubResource("CapsuleShape2D_s437r")
+
+[node name="InteractArea" type="Area2D" parent="."]
+collision_layer = 33
+script = ExtResource("3_ahsi1")
+metadata/_custom_type_script = "uid://du8wfijr35r35"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea"]
+position = Vector2(1.2820512, -35.472973)
+rotation = -3.1415925
+scale = Vector2(1.6666666, -4.6000004)
+shape = SubResource("RectangleShape2D_3nstv")
+debug_color = Color(0.60539037, 0.53343356, 0.2670052, 0.41960785)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+visible = false
+shape = SubResource("CircleShape2D_1p8x1")
+
+[node name="TalkBehavior" type="Node" parent="." node_paths=PackedStringArray("interact_area")]
+script = ExtResource("4_0a2bw")
+dialogue = ExtResource("5_ahsi1")
+interact_area = NodePath("../InteractArea")
+metadata/_custom_type_script = "uid://edcifob4jc4s"

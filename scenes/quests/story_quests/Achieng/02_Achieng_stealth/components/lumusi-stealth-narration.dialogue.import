@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://ctnqvcvkge3wr"
+path="res://.godot/imported/lumusi-stealth-narration.dialogue-acb22440671504a0c8169823151a2def.tres"
+
+[deps]
+
+source_file="res://scenes/quests/story_quests/Achieng/02_Achieng_stealth/components/lumusi-stealth-narration.dialogue"
+dest_files=["res://.godot/imported/lumusi-stealth-narration.dialogue-acb22440671504a0c8169823151a2def.tres"]
+
+[params]
+
+defaults=true

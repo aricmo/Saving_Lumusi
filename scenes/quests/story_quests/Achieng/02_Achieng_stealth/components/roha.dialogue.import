@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://b85owysws4cl6"
+path="res://.godot/imported/roha.dialogue-2ddb21d5a580db17789cf2e2ff3211d4.tres"
+
+[deps]
+
+source_file="res://scenes/quests/story_quests/Achieng/02_Achieng_stealth/components/roha.dialogue"
+dest_files=["res://.godot/imported/roha.dialogue-2ddb21d5a580db17789cf2e2ff3211d4.tres"]
+
+[params]
+
+defaults=true
