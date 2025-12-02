@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dsmkprje0nhns"
+path="res://.godot/imported/lumusi_spirit-collection.dialogue-276c23faf48ea80dbaa9a565ee10bbf8.tres"
+
+[deps]
+
+source_file="res://scenes/quests/story_quests/Achieng/02_Achieng_stealth/lumusi_spirit-collection.dialogue"
+dest_files=["res://.godot/imported/lumusi_spirit-collection.dialogue-276c23faf48ea80dbaa9a565ee10bbf8.tres"]
+
+[params]
+
+defaults=true

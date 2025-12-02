@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bebhu3mclc5xq"
+path="res://.godot/imported/lumusi_checkpoint.dialogue-973af9da1628e8febfc282901f3de600.tres"
+
+[deps]
+
+source_file="res://scenes/quests/story_quests/Achieng/02_Achieng_stealth/lumusi_checkpoint.dialogue"
+dest_files=["res://.godot/imported/lumusi_checkpoint.dialogue-973af9da1628e8febfc282901f3de600.tres"]
+
+[params]
+
+defaults=true

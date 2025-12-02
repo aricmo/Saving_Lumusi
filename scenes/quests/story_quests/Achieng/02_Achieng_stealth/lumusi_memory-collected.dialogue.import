@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bmtehtmjib4u1"
+path="res://.godot/imported/lumusi_memory-collected.dialogue-16d8cf248ac71b21a3f51344c670e61a.tres"
+
+[deps]
+
+source_file="res://scenes/quests/story_quests/Achieng/02_Achieng_stealth/lumusi_memory-collected.dialogue"
+dest_files=["res://.godot/imported/lumusi_memory-collected.dialogue-16d8cf248ac71b21a3f51344c670e61a.tres"]
+
+[params]
+
+defaults=true

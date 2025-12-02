@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bfirlmqtr38v2"
+path="res://.godot/imported/lumusi_imgtn-collected.dialogue-e12cbf0cd77bc40c69d5dfb6f2019c5f.tres"
+
+[deps]
+
+source_file="res://scenes/quests/story_quests/Achieng/02_Achieng_stealth/lumusi_imgtn-collected.dialogue"
+dest_files=["res://.godot/imported/lumusi_imgtn-collected.dialogue-e12cbf0cd77bc40c69d5dfb6f2019c5f.tres"]
+
+[params]
+
+defaults=true
