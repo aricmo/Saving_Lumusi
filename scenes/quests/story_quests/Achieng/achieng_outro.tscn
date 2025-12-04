@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://6gsjb71qehqa"]
+[gd_scene load_steps=22 format=4 uid="uid://6gsjb71qehqa"]
 
 [ext_resource type="Script" uid="uid://cwpdqqki2nq51" path="res://scenes/quests/story_quests/Achieng/achieng_outro.gd" id="1_owwl4"]
 [ext_resource type="TileSet" uid="uid://oynx002hv8tl" path="res://tiles/water.tres" id="1_y2xmf"]
@@ -7,13 +7,14 @@
 [ext_resource type="TileSet" uid="uid://b8qnr0owsbhhn" path="res://tiles/exterior_floors.tres" id="4_kgemw"]
 [ext_resource type="TileSet" uid="uid://do0ffypatd77h" path="res://tiles/bridges.tres" id="5_tyd5y"]
 [ext_resource type="Texture2D" uid="uid://b3sioge50yel3" path="res://assets/lumisi_files/villager3.png" id="7_74q8b"]
+[ext_resource type="PackedScene" uid="uid://bp20cjimwi8l0" path="res://scenes/game_elements/props/buildings/house/house_2.tscn" id="8_0hdoa"]
 [ext_resource type="Texture2D" uid="uid://cf4s3v7exsuol" path="res://assets/lumisi_files/crescent-sun.png" id="8_14kb8"]
 [ext_resource type="Texture2D" uid="uid://71qpj4chsu4u" path="res://assets/lumisi_files/full-sun.png" id="9_kufqt"]
 [ext_resource type="Texture2D" uid="uid://s0oupr6i0pef" path="res://assets/lumisi_files/villager2.png" id="10_txuyk"]
 [ext_resource type="Texture2D" uid="uid://b6uidl2itg52g" path="res://assets/lumisi_files/village-removebg-preview.png" id="11_14kb8"]
 [ext_resource type="Texture2D" uid="uid://wp4gcho1a4bn" path="res://scenes/game_elements/characters/components/assets/elder_idle.png" id="11_81p5r"]
 [ext_resource type="Texture2D" uid="uid://hhkhu7wtk8mu" path="res://scenes/game_elements/characters/components/assets/elder2_idle.png" id="12_3jjq2"]
-[ext_resource type="Texture2D" uid="uid://3s3oodcl2bq8" path="res://assets/lumisi_files/houses-removebg-preview.png" id="12_kufqt"]
+[ext_resource type="Texture2D" uid="uid://c8myvmcwofmeb" path="res://assets/lumisi_files/villager1.png" id="13_o0ak4"]
 [ext_resource type="AudioStream" uid="uid://b4ua6mxjjfs7o" path="res://assets/lumisi_files/crowdcheer.wav" id="15_j00g6"]
 [ext_resource type="AudioStream" uid="uid://cgbixdfwec05x" path="res://assets/lumisi_files/celebration.mp3" id="16_0hdoa"]
 [ext_resource type="AudioStream" uid="uid://cfj5iupnlpar5" path="res://assets/lumisi_files/wind.mp3" id="17_0hdoa"]
@@ -105,10 +106,10 @@ tracks/5/path = NodePath("CanvasModulate:color")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 13),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 4, 7, 10, 12),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Color(0.23137255, 0.23137255, 0.3137255, 1), Color(1, 1, 1, 1)]
+"values": [Color(0.23137255, 0.23137255, 0.3137255, 1), Color(0.23137255, 0.23137255, 0.3137255, 1), Color(0.23137255, 0.23137255, 0.3137255, 1), Color(0.23137255, 0.23137255, 0.3137255, 1), Color(1, 1, 1, 1)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -225,7 +226,7 @@ tracks/15/path = NodePath("CheeringSFX:playing")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/keys = {
-"times": PackedFloat32Array(13),
+"times": PackedFloat32Array(12),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
@@ -612,18 +613,20 @@ texture = ExtResource("11_14kb8")
 region_enabled = true
 region_rect = Rect2(274.5, 143.25, 97, 71)
 
-[node name="house5" type="Sprite2D" parent="TileMapLayers/village"]
-position = Vector2(1740, 910.00006)
-scale = Vector2(2.4, 2.4)
-texture = ExtResource("12_kufqt")
-region_enabled = true
-region_rect = Rect2(440.5, 153.25, 71.5, 69)
+[node name="House_3" parent="TileMapLayers/village" instance=ExtResource("8_0hdoa")]
+position = Vector2(483, 977)
+scale = Vector2(1, 0.771)
+
+[node name="House_4" parent="TileMapLayers/village" instance=ExtResource("8_0hdoa")]
+position = Vector2(1610, 955)
+scale = Vector2(1, 0.771)
 
 [node name="actors" type="Node2D" parent="."]
 y_sort_enabled = true
 
 [node name="achieng" type="Sprite2D" parent="actors"]
 position = Vector2(990, 1192)
+scale = Vector2(0.8, 0.8)
 texture = ExtResource("7_74q8b")
 region_enabled = true
 region_rect = Rect2(311, 43.708, 65.5, 134.5)
@@ -642,13 +645,13 @@ texture = ExtResource("9_kufqt")
 position = Vector2(760, 607)
 texture = ExtResource("10_txuyk")
 region_enabled = true
-region_rect = Rect2(173.5, 54.629, 79.5, 126)
+region_rect = Rect2(312, 54.535, 64, 121.5)
 
 [node name="villager2" type="Sprite2D" parent="actors"]
 position = Vector2(896, 905)
-texture = ExtResource("10_txuyk")
+texture = ExtResource("13_o0ak4")
 region_enabled = true
-region_rect = Rect2(173.5, 54.629, 79.5, 126)
+region_rect = Rect2(561.5, 41.595, 80, 134)
 
 [node name="villager3" type="Sprite2D" parent="actors"]
 position = Vector2(1181, 713)
@@ -660,25 +663,25 @@ region_rect = Rect2(173.5, 54.629, 79.5, 126)
 position = Vector2(629, 659)
 texture = ExtResource("10_txuyk")
 region_enabled = true
-region_rect = Rect2(173.5, 54.629, 79.5, 126)
+region_rect = Rect2(55.5, 37.258, 55.5, 137)
 
 [node name="villager5" type="Sprite2D" parent="actors"]
 position = Vector2(770, 838)
 texture = ExtResource("10_txuyk")
 region_enabled = true
-region_rect = Rect2(173.5, 54.629, 79.5, 126)
+region_rect = Rect2(58, 269.98102, 44.5, 112)
 
 [node name="villager6" type="Sprite2D" parent="actors"]
 position = Vector2(1255, 858)
 texture = ExtResource("10_txuyk")
 region_enabled = true
-region_rect = Rect2(173.5, 54.629, 79.5, 126)
+region_rect = Rect2(576, 53.723, 69, 127.49999)
 
 [node name="villager7" type="Sprite2D" parent="actors"]
 position = Vector2(682, 778)
 texture = ExtResource("10_txuyk")
 region_enabled = true
-region_rect = Rect2(173.5, 54.629, 79.5, 126)
+region_rect = Rect2(452.5, 51.664, 50.5, 127.5)
 
 [node name="villager8" type="Sprite2D" parent="actors"]
 position = Vector2(1242, 741)
@@ -708,7 +711,7 @@ region_rect = Rect2(173.5, 54.629, 79.5, 126)
 position = Vector2(1088, 921)
 texture = ExtResource("10_txuyk")
 region_enabled = true
-region_rect = Rect2(173.5, 54.629, 79.5, 126)
+region_rect = Rect2(182.5, 267.6, 61, 115)
 
 [node name="villager13" type="Sprite2D" parent="actors"]
 position = Vector2(1151, 517)
@@ -735,6 +738,7 @@ grow_vertical = 0
 
 [node name="StoryLabel" type="RichTextLabel" parent="UI/PanelContainer"]
 layout_mode = 2
+theme_override_font_sizes/bold_font_size = 20
 fit_content = true
 
 [node name="Director" type="AnimationPlayer" parent="."]
