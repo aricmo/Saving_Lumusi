@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dkt0tbbadkiov"
+path="res://.godot/imported/lumusi-outro.dialogue-1e704604df7420aa7514440da46efe9b.tres"
+
+[deps]
+
+source_file="res://scenes/quests/story_quests/Achieng/04_Achieng_outro/components/lumusi-outro.dialogue"
+dest_files=["res://.godot/imported/lumusi-outro.dialogue-1e704604df7420aa7514440da46efe9b.tres"]
+
+[params]
+
+defaults=true

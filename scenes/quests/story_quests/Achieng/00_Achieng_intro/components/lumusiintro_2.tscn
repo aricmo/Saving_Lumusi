@@ -201,5 +201,5 @@ position = Vector2(9, 19)
 script = ExtResource("9_svwg0")
 dialogue = ExtResource("10_qcj8q")
 animation_player = NodePath("../TileMapLayers/Ontheground/AnimationPlayer")
-next_scene = "uid://ba45vqr7g4hy4"
+next_scene = "uid://b70nxaj8q42e6"
 metadata/_custom_type_script = "uid://x1mxt6bmei2o"

@@ -11,14 +11,14 @@ const NEXT_SCENE_PATH: String = "res://scenes/quests/story_quests/Achieng/credit
 @onready var returned_light: Sprite2D = $Actors/ReturnedLight
 
 # Text from your Design Document
-var story_lines: Dictionary = {
-	0: "With Roha’s help, Achieng retrieved the light source from Ojukwu’s castle, and came back to the tribe in victory.",
-	1: "Everyone praised Achieng for her bravery, courage and wisdom. She would forever be remembered as the saviour of Lumusi.",
-	2: "The light source, back in its home, found its way into its Orb, as the tribe watched in awe.",
-	3: "Finally, Lumusi was in full swing. Laughter and Joy filled the air, as the people danced and sang.",
-	4: "Achieng watched the Orb in the sky and felt she finally understood why they celebrated.",
-	5: "They were light, and light would always shine in the darkness."
-}
+#var story_lines: Dictionary = {
+	#0: "With Roha’s help, Achieng retrieved the light source from Ojukwu’s castle, and came back to the tribe in victory.",
+	#1: "Everyone praised Achieng for her bravery, courage and wisdom. She would forever be remembered as the saviour of Lumusi.",
+	#2: "The light source, back in its home, found its way into its Orb, as the tribe watched in awe.",
+	#3: "Finally, Lumusi was in full swing. Laughter and Joy filled the air, as the people danced and sang.",
+	#4: "Achieng watched the Orb in the sky and felt she finally understood why they celebrated.",
+	#5: "They were light, and light would always shine in the darkness."
+#}
 
 func _ready() -> void:
 	if returned_light: returned_light.visible = false
@@ -27,10 +27,10 @@ func _ready() -> void:
 	if director.has_animation("OutroSequence"):
 		director.play("OutroSequence")
 
-func show_line(index: int) -> void:
-	if index in story_lines:
-		narration_label.text = story_lines[index]
-		narration_label.visible_ratio = 1.0 # Shows text instantly to avoid bugs
+#func show_line(index: int) -> void:
+	#if index in story_lines:
+		#narration_label.text = story_lines[index]
+		#narration_label.visible_ratio = 1.0 # Shows text instantly to avoid bugs
 
 func end_cutscene() -> void:
 	# Fade out all audio
