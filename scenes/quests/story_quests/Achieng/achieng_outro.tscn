@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://6gsjb71qehqa"]
+[gd_scene load_steps=24 format=4 uid="uid://b2s0rlvoob15w"]
 
 [ext_resource type="Script" uid="uid://cwpdqqki2nq51" path="res://scenes/quests/story_quests/Achieng/achieng_outro.gd" id="1_owwl4"]
 [ext_resource type="TileSet" uid="uid://oynx002hv8tl" path="res://tiles/water.tres" id="1_y2xmf"]
@@ -18,6 +18,8 @@
 [ext_resource type="AudioStream" uid="uid://b4ua6mxjjfs7o" path="res://assets/lumisi_files/crowdcheer.wav" id="15_j00g6"]
 [ext_resource type="AudioStream" uid="uid://cgbixdfwec05x" path="res://assets/lumisi_files/celebration.mp3" id="16_0hdoa"]
 [ext_resource type="AudioStream" uid="uid://cfj5iupnlpar5" path="res://assets/lumisi_files/wind.mp3" id="17_0hdoa"]
+[ext_resource type="Script" uid="uid://x1mxt6bmei2o" path="res://scenes/ui_elements/cinematic/cinematic.gd" id="18_ex1ui"]
+[ext_resource type="Resource" uid="uid://dkt0tbbadkiov" path="res://scenes/quests/story_quests/Achieng/04_Achieng_outro/components/lumusi-outro.dialogue" id="19_28rrg"]
 
 [sub_resource type="Animation" id="Animation_74q8b"]
 resource_name = "OutroSequence"
@@ -756,3 +758,8 @@ stream = ExtResource("16_0hdoa")
 [node name="AmbiencePlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("17_0hdoa")
 autoplay = true
+
+[node name="Cinematic" type="Node2D" parent="."]
+script = ExtResource("18_ex1ui")
+dialogue = ExtResource("19_28rrg")
+metadata/_custom_type_script = "uid://x1mxt6bmei2o"
