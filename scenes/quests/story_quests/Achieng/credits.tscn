@@ -7,8 +7,59 @@
 [ext_resource type="TileSet" uid="uid://b8qnr0owsbhhn" path="res://tiles/exterior_floors.tres" id="5_1kowb"]
 [ext_resource type="TileSet" uid="uid://do0ffypatd77h" path="res://tiles/bridges.tres" id="6_qor7b"]
 [ext_resource type="Texture2D" uid="uid://b6uidl2itg52g" path="res://assets/lumisi_files/village-removebg-preview.png" id="7_iw48a"]
-[ext_resource type="Texture2D" uid="uid://3s3oodcl2bq8" path="res://assets/lumisi_files/houses-removebg-preview.png" id="8_cgap1"]
+[ext_resource type="PackedScene" uid="uid://bp20cjimwi8l0" path="res://scenes/game_elements/props/buildings/house/house_2.tscn" id="9_1kowb"]
 [ext_resource type="AudioStream" uid="uid://cwnjo840ld1j7" path="res://assets/lumisi_files/credits.mp3" id="9_68e7b"]
+
+[sub_resource type="Animation" id="Animation_1kowb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MusicPlayer:autoplay")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MusicPlayer:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CreditsLayer/CreditsText:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(620, 2112)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasModulate:color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.101960786, 0.101960786, 0.18039216, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_68e7b"]
 resource_name = "credits"
@@ -76,57 +127,6 @@ tracks/4/keys = {
 }]
 }
 
-[sub_resource type="Animation" id="Animation_1kowb"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("MusicPlayer:autoplay")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("MusicPlayer:playing")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("CreditsLayer/CreditsText:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(620, 2112)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("CanvasModulate:color")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0.101960786, 0.101960786, 0.18039216, 1)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qor7b"]
 _data = {
 &"RESET": SubResource("Animation_1kowb"),
@@ -143,6 +143,58 @@ zoom = Vector2(0.4, 0.4)
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 position = Vector2(-1, 3)
 color = Color(0.101960786, 0.101960786, 0.18039216, 1)
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_68e7b")
+
+[node name="CreditsLayer" type="CanvasLayer" parent="."]
+
+[node name="CreditsText" type="RichTextLabel" parent="CreditsLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 2112.0
+offset_right = 413.0
+offset_bottom = 3218.0
+grow_horizontal = 2
+theme_override_font_sizes/normal_font_size = 26
+bbcode_enabled = true
+text = "[center]
+[b]SAVING LUMUSI[/b]
+
+A Game By
+The ALOS Team
+
+
+- INTRO & NARRATIVE -
+Momore
+Linus
+
+
+- MINIGAME DESIGN -
+Momore
+Blessing
+
+
+- OUTRO SEQUENCE -
+Momore
+Stephen
+
+- CREDITS IMPLEMENTATION -
+Stephen
+
+
+[b]THANK YOU FOR PLAYING![/b]
+
+Made with Godot Engine
+[/center]"
+
+[node name="SunriseDirector" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_qor7b")
+}
+autoplay = "credits"
 
 [node name="TileMapLayers" type="Node2D" parent="."]
 position = Vector2(0, 8)
@@ -239,32 +291,10 @@ texture = ExtResource("7_iw48a")
 region_enabled = true
 region_rect = Rect2(274.5, 143.25, 97, 71)
 
-[node name="house5" type="Sprite2D" parent="TileMapLayers/village"]
-position = Vector2(1740, 910.00006)
-scale = Vector2(2.4, 2.4)
-texture = ExtResource("8_cgap1")
-region_enabled = true
-region_rect = Rect2(440.5, 153.25, 71.5, 69)
+[node name="House_3" parent="TileMapLayers/village" instance=ExtResource("9_1kowb")]
+position = Vector2(483, 977)
+scale = Vector2(1, 0.771)
 
-[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("9_68e7b")
-
-[node name="CreditsLayer" type="CanvasLayer" parent="."]
-
-[node name="CreditsText" type="RichTextLabel" parent="CreditsLayer"]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -20.0
-offset_top = 2112.0
-offset_right = 413.0
-offset_bottom = 2472.0
-grow_horizontal = 2
-text = "example
-example2"
-
-[node name="SunriseDirector" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_qor7b")
-}
-autoplay = "credits"
+[node name="House_4" parent="TileMapLayers/village" instance=ExtResource("9_1kowb")]
+position = Vector2(1610, 955)
+scale = Vector2(1, 0.771)
